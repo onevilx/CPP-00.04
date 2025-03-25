@@ -6,16 +6,14 @@
 #    By: onevil_x <onevil_x@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/22 16:28:33 by onevil_x          #+#    #+#              #
-#    Updated: 2025/03/22 16:28:35 by onevil_x         ###   ########.fr        #
+#    Updated: 2025/03/25 22:48:43 by onevil_x         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
-
 CC = g++
-
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-
+RM = rm -f
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 SOURCES = megaphone.cpp
 
 OBJ = $(SOURCES:.cpp=.opp)
@@ -23,15 +21,15 @@ OBJ = $(SOURCES:.cpp=.opp)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $@
+	$(CC) $(CPPFLAGS) $(OBJ) -o $@
 
 %.opp: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
-	@rm -rf $(OBJ)	
+	$(RM) $(OBJ)	
 
 fclean: clean
-	@rm -rf $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
