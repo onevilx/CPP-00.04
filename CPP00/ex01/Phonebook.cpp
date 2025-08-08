@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: onevil_x <onevil_x@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yaboukir <yaboukir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 00:15:44 by onevil_x          #+#    #+#             */
-/*   Updated: 2025/07/19 00:29:19 by onevil_x         ###   ########.fr       */
+/*   Updated: 2025/08/08 11:29:59 by yaboukir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 PhoneBook::PhoneBook() : contactCount(0) {}
 
-void PhoneBook::addContact() {
+void PhoneBook::addContact() 
+{
     Contact newContact;
     std::string input;
 
@@ -43,7 +44,8 @@ void PhoneBook::addContact() {
 	std::cout << "Contact added successfully!" << std::endl;
 }
 
-static std::string formatField(const std::string &str) {
+static std::string formatField(const std::string &str) 
+{
 	if (str.length() > 10)
 		return str.substr(0, 9) + ".";
 	else if (str.length() < 10)
@@ -51,7 +53,7 @@ static std::string formatField(const std::string &str) {
 	return str;
 }
 
-void PhoneBook::searchContact() const {
+void PhoneBook::searchContact() const {	
 	if (contactCount == 0) 
 	{
 		std::cout << "No Contacts in the PhoneBook" << std::endl;
