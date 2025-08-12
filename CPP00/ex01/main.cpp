@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaboukir <yaboukir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: onevil_x <onevil_x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 02:09:17 by onevil_x          #+#    #+#             */
-/*   Updated: 2025/08/08 11:15:12 by yaboukir         ###   ########.fr       */
+/*   Updated: 2025/08/12 01:57:22 by onevil_x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main()
     std::cout << "Welcome to PhoneBook!" << std::endl;
     while (1)
     {
-        std::cout << "___________________________________" << std::endl;
+        std::cout << "___________________________________\n";
         std::cout << "Enter a command {ADD, SEARCH, EXIT}" << std::endl;
         std::getline(std::cin, cmd);
 

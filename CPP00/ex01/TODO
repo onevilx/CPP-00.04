@@ -1,0 +1,24 @@
+onevil_x@root:~/Desktop/workspace/CPP-00.04/CPP00/ex01$ ./Phonebook 
+Welcome to PhoneBook!
+___________________________________
+Enter a command {ADD, SEARCH, EXIT}
+ADD
+Enter first name: 
+Enter last name: 
+Enter nickname: 
+Enter Phone number: 
+Enter darkest secret: 
+Contact added successfully!
+___________________________________
+Enter a command {ADD, SEARCH, EXIT}
+
+Invalid command. Try again !
+___________________________________
+Enter a command {ADD, SEARCH, EXIT}
+SEARCH
+     Index|First Name| Last Name|  Nickname
+         0|          |          |          
+Enter index to view Details: 
+
+
+should not add an empty Contact !

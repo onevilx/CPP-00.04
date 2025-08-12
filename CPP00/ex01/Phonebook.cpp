@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaboukir <yaboukir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: onevil_x <onevil_x@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 00:15:44 by onevil_x          #+#    #+#             */
-/*   Updated: 2025/08/08 11:29:59 by yaboukir         ###   ########.fr       */
+/*   Updated: 2025/08/12 01:58:17 by onevil_x         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,30 @@ void PhoneBook::addContact()
 {
     Contact newContact;
     std::string input;
-
+	
 	std::cout << "Enter first name: ";
 	std::getline(std::cin, input);
 	newContact.setFirstName(input);
-
+	if (std::cin.eof())
+	{
+		std::cout << "\n";
+		return ;
+	}
+	if (input.empty())
+	{
+		std::cout << "you cant add an empty contact, Please try again !\n";
+		return ; 
+	}
+	
 	std::cout << "Enter last name: ";
     std::getline(std::cin, input);
     newContact.setLastName(input);
-	
+	if (input.empty())
+	{
+		std::cout << "you cant add an empty contact, Please try again !\n";
+		return ; 
+	}
+
 	std::cout << "Enter nickname: ";
 	std::getline(std::cin, input);
 	newContact.setNickname(input);
@@ -34,11 +49,21 @@ void PhoneBook::addContact()
 	std::cout << "Enter Phone number: ";
 	std::getline(std::cin, input);
 	newContact.setPhoneNumber(input);
-	
+	if (input.empty())
+	{
+		std::cout << "you cant add an empty contact, Please try again !\n";
+		return ; 
+	}
+
 	std::cout << "Enter darkest secret: ";
 	std::getline(std::cin, input);
 	newContact.setDarkestSecret(input);
-	
+	if (input.empty())
+	{
+		std::cout << "you cant add an empty contact, Please try again !\n";
+		return ; 
+	}	
+
 	contacts[contactCount % 8] = newContact;
 	contactCount++;
 	std::cout << "Contact added successfully!" << std::endl;
@@ -59,7 +84,7 @@ void PhoneBook::searchContact() const {
 		std::cout << "No Contacts in the PhoneBook" << std::endl;
 		return ;
 	}
-
+	
 	std::cout << std::setw(10) << "Index"
 			  << "|" << std::setw(10) << "First Name"
 			  << "|" << std::setw(10) << "Last Name"
