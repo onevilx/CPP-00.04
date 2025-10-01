@@ -1,9 +1,8 @@
-NAME = Fight
+NAME = Sedforlosers
 CC = c++
 RM = rm -f
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
-SOURCES = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
-INCLUDES = Weapon.hpp HumanA.hpp HumanB.hpp
+CPPFLAGS = -Wall -Wextra -Werror #-std=c++98 -fsanitize=address
+SOURCES = main.cpp
 
 OBJ = $(SOURCES:.cpp=.opp)
 
@@ -12,7 +11,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(CPPFLAGS) $(OBJ) -o $@
 
-%.opp: %.cpp $(INCLUDES)
+%.opp: %.cpp
 	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
