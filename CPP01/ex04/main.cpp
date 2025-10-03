@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <string>
 
 int main(int argc, char **argv)
 {
@@ -23,18 +22,18 @@ int main(int argc, char **argv)
             return 1;
         }
 
-        std::string line;
-        while (std::getline(infile, line))
+        std::string content;
+        char ch;
+        while (infile.get(ch))
+            content += ch;
+        size_t pos = 0;
+        while ((pos = content.find(string1, pos)) != std::string::npos)
         {
-            size_t pos = 0;
-            while ((pos = line.find(string1, pos)) != std::string::npos)
-            {
-                line.erase(pos, string1.length());
-                line.insert(pos, string2);
-                pos += string2.length();
-            }
-            outfile << line << std::endl;
+            content.erase(pos, string1.length());
+            content.insert(pos, string2);
+            pos += string2.length();
         }
+        outfile << content;
     }
     else
         std::cout << "this is Wrong! its: ./program filename oldstring newstring" << std::endl;
