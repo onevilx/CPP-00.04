@@ -1,6 +1,6 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie() : name("HordeZombie")
+Zombie::Zombie()
 {
     std::cout << name << "has just born" << std::endl;
 }
