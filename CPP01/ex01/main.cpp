@@ -3,9 +3,11 @@
 int main(void)
 {
     Zombie *_hordeZombie;
-    int N = 5;
+    int N = 0;
 
     _hordeZombie = zombieHorde(N, "HordeZombie");
+    if (!_hordeZombie)
+        return (1);
     int i = 0;
     while (i < N)
     {
