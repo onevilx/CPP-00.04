@@ -1,7 +1,7 @@
 NAME = Harl
 CC = c++
 RM = rm -f
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 SOURCES = main.cpp Harl.cpp
 INCLUDES = Harl.hpp
 

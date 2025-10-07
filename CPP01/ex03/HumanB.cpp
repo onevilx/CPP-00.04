@@ -1,20 +1,15 @@
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string _name)
-{
-    this->Weaponn = NULL;
-    this->name = _name;
-    std::cout << "Human B" << name << "created with no weapon wiw" << std::endl;
-}
+HumanB::HumanB(std::string _name) : name(_name), Weaponn(NULL) {}
 
-HumanB::~HumanB(void)
-{
-    std::cout << "Human B" << this->name << "has been destroyed" << std::endl;
-}
+HumanB::~HumanB(void) {}
 
-void    HumanB::attack(void)
+void HumanB::attack(void)
 {
-    std::cout << this->name << "attacked by this weapon" << this->Weaponn->getType() << std::endl;
+    if (this->Weaponn)
+        std::cout << this->name << " attacks with their " << this->Weaponn->getType() << std::endl;
+    else
+        std::cout << this->name << " has no weapon to attack with!" << std::endl;
 }
 
 void    HumanB::setWeapon(Weapon &_weapon)

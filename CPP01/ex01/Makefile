@@ -1,7 +1,7 @@
 NAME = HordeZombies
 CC = c++
 RM = rm -f
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 SOURCES = Zombie.cpp zombieHorde.cpp main.cpp
 INCLUDES = Zombie.hpp
 

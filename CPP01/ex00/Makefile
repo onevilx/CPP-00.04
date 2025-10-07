@@ -1,7 +1,7 @@
 NAME = ZOMBIE
 CC = c++
 RM = rm -f
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 SOURCES = newZombie.cpp Zombie.cpp randomChump.cpp main.cpp
 INCLUDES = Zombie.hpp
 

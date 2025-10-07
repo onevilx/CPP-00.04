@@ -2,6 +2,7 @@
 #define HUMANA_HPP
 
 #include "Weapon.hpp"
+
 class HumanA
 {
     private:
@@ -13,7 +14,6 @@ class HumanA
     ~HumanA(void);
 
     void    attack(void);
-    void    setWeapon(Weapon _weapon);
 };
 
 #endif
