@@ -18,10 +18,11 @@ class Point
     Point(const Point& cpyfxd);
     ~Point();
     Point &operator=(const Point& srcfxd);
-    const Point& get_att_x(void)const;
-    const Point& get_att_y(void)const;    
+    Fixed const &get_att_x(void)const;
+    Fixed const &get_att_y(void)const;    
 };
 
 std::ostream &operator<<(std::ostream &out, const Point &num);
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif
