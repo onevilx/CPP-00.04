@@ -1,6 +1,5 @@
 #include "Point.hpp"
 
-
 static Fixed areapoint(Point const &p1, Point const &p2, Point const &p3)
 {
     Fixed a;

@@ -1,9 +1,6 @@
 #ifndef POINT_HPP
 #define POINT_HPP
 
-#include <iostream>
-#include <string>
-
 #include "Fixed.hpp"
 
 class Point
@@ -22,7 +19,6 @@ class Point
     Fixed const &get_att_y(void)const;    
 };
 
-std::ostream &operator<<(std::ostream &out, const Point &num);
 bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif

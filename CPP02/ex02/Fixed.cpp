@@ -19,6 +19,8 @@ Fixed::Fixed(const Fixed& cpyfxd)
     *this = cpyfxd;
 }
 
+Fixed::~Fixed() {}
+
 int Fixed::toInt( void ) const
 {
     return num >> frac_bits;
@@ -168,4 +170,3 @@ Fixed Fixed::operator--(int)
     return tmp;
 }
 
-Fixed::~Fixed() {}

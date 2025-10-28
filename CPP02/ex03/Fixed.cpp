@@ -1,7 +1,5 @@
 #include "Fixed.hpp"
 
-#include "Fixed.hpp"
-
 const int   Fixed::frac_bits = 8;
 
 Fixed::Fixed() : num(0) {}
@@ -20,6 +18,8 @@ Fixed::Fixed(const Fixed& cpyfxd)
 {
     *this = cpyfxd;
 }
+
+Fixed::~Fixed() {}
 
 int Fixed::toInt( void ) const
 {
@@ -169,5 +169,3 @@ Fixed Fixed::operator--(int)
     --*this;
     return tmp;
 }
-
-Fixed::~Fixed() {}
