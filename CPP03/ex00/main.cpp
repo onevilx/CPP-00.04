@@ -9,6 +9,7 @@ int main()
     Simo.attack("Bob");
     abdo.attack("abdo");
 
+    
     std::cout << "\n-----|Testing takeDamage|-----\n";
     abdo.takeDamage(5);
     Simo.takeDamage(3);

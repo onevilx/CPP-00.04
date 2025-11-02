@@ -12,6 +12,7 @@ class ClapTrap
     unsigned int    attackdamage;
 
     public:
+    ClapTrap();
     ClapTrap(std::string user);
     ClapTrap(const ClapTrap& other);
     ClapTrap &operator=(const ClapTrap& other);
@@ -21,8 +22,8 @@ class ClapTrap
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 
-    std::string getter_att(void) const;
-    void setter_att(std::string const &att);
+    std::string getter_name(void) const;
+    void setter_name(std::string const &att);
 
 };
 

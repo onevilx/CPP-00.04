@@ -1,13 +1,19 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string user) : name(user), hitPoints(10), energyPoints(10), attackdamage(0)
+ClapTrap::ClapTrap() : name("Default!"), hitPoints(10), energyPoints(10), attackdamage(0)
 {
-    std::cout << "Default parameterized Constructor called!" << std::endl;
+    std::cout << "Default Constructor Called!" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& other) : name(other.name), hitPoints(other.hitPoints), energyPoints(other.energyPoints), attackdamage(other.attackdamage)
+ClapTrap::ClapTrap(std::string user) : name(user), hitPoints(10), energyPoints(10), attackdamage(0)
 {
-    std::cout << "Copy constructor called" << std::endl;   
+    std::cout << "Parameterized Constructor called for " << name << "!" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap& other)
+{
+    std::cout << "Copy constructor called!" << std::endl;
+    *this = other;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
@@ -26,17 +32,17 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 
 ClapTrap::~ClapTrap() 
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "Destructor called!" << std::endl;
 }
 
-std::string ClapTrap::getter_att(void) const
+std::string ClapTrap::getter_name(void) const
 {
-    return (this->name);
+    return name;
 }
 
-void ClapTrap::setter_att(std::string const &att)
+void ClapTrap::setter_name(std::string const &att)
 {
-    this->name = att;
+    name = att;
 }
 
 void ClapTrap::attack(const std::string& target) 
@@ -47,7 +53,7 @@ void ClapTrap::attack(const std::string& target)
         << " causing: " << attackdamage << " Points of damage" << std::endl;
     }
     else
-        std::cout << "ClapTrap " << name << "has no energy or Hit Points left!" << std::endl;
+        std::cout << "ClapTrap " << name << " has no energy or Hit Points left!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -67,6 +73,12 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+    if (energyPoints == 0 || hitPoints == 0)
+    {
+        std::cout << name << " cannot repair, (no energy or already dead!)." << std::endl;
+        return ;
+    }
     hitPoints += amount;
+    energyPoints--;
     std::cout << name << " is repaired by: " << amount << " points, current hp is: " << hitPoints << std::endl;
 }

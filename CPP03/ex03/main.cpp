@@ -1,5 +1,6 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
@@ -48,6 +49,23 @@ int main()
     ScavTrap assignedScav;
     assignedScav = scav;
     assignedScav.attack("Enemy");
+
+    std::cout << "\n--- Creating FragTraps ---" << std::endl;
+    FragTrap frag("Fraggyyy");
+    FragTrap defaultFrag;
+
+    std::cout << "\n--- Testing FragTrap highFivesGuys ---" << std::endl;
+    frag.highFivesGuys();
+    defaultFrag.highFivesGuys();
+
+    std::cout << "\n--- Testing FragTrap copy constructor ---" << std::endl;
+    FragTrap copyFrag(frag);
+    copyFrag.attack("Enemy");
+
+    std::cout << "\n--- Testing FragTrap assignment operator ---" << std::endl;
+    FragTrap assignedFrag;
+    assignedFrag = frag;
+    assignedFrag.attack("Enemy");
 
     std::cout << "\n--- End of program ---" << std::endl;
     return 0;

@@ -1,9 +1,9 @@
-NAME = ScavTrap
+NAME = FragTrap
 CC = c++
 RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-SOURCES = main.cpp ClapTrap.cpp ScavTrap.cpp 
-INCLUDES = ClapTrap.hpp ScavTrap.hpp
+SOURCES = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
+INCLUDES = ClapTrap.hpp ScavTrap.hpp FragTrap.cpp DiamondTrap.hpp
 
 OBJ = $(SOURCES:.cpp=.opp)
 
