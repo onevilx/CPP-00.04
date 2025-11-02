@@ -1,6 +1,7 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
@@ -66,6 +67,29 @@ int main()
     FragTrap assignedFrag;
     assignedFrag = frag;
     assignedFrag.attack("Enemy");
+
+    std::cout << "\n=== Creating DiamondTraps ===" << std::endl;
+    DiamondTrap defaultDiamond;
+    DiamondTrap diamond("Youssef");
+
+    std::cout << "\n--- Testing DiamondTrap attack (inherited from ScavTrap) ---" << std::endl;
+    diamond.attack("Target");
+    defaultDiamond.attack("Another Target");
+
+    std::cout << "\n--- Testing DiamondTrap whoAmI ---" << std::endl;
+    diamond.whoAmI();
+    defaultDiamond.whoAmI();
+
+    std::cout << "\n--- Testing DiamondTrap copy constructor ---" << std::endl;
+    DiamondTrap copyDiamond(diamond);
+    copyDiamond.whoAmI();
+    copyDiamond.attack("Enemy");
+
+    std::cout << "\n--- Testing DiamondTrap assignment operator ---" << std::endl;
+    DiamondTrap assignedDiamond;
+    assignedDiamond = diamond;
+    assignedDiamond.whoAmI();
+    assignedDiamond.attack("Enemy");
 
     std::cout << "\n--- End of program ---" << std::endl;
     return 0;

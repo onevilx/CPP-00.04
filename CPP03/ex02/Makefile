@@ -3,7 +3,7 @@ CC = c++
 RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 SOURCES = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
-INCLUDES = ClapTrap.hpp ScavTrap.hpp FragTrap.cpp
+INCLUDES = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 
 OBJ = $(SOURCES:.cpp=.opp)
 
