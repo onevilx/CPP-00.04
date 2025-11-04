@@ -1,13 +1,13 @@
 #include "Dog.hpp"
 
-Dog::Dog() : Animal()
+Dog::Dog() : AAnimal()
 {
     std::cout << "Dog Default Constructor Called!" << std::endl;
     brainy = new Brain();
     type = "Dog";
 }
 
-Dog::Dog(const Dog& other) : Animal(other)
+Dog::Dog(const Dog& other) : AAnimal(other)
 {
     std::cout << "Dog Copy Constructor Called!" << std::endl;
     brainy = new Brain(*other.brainy);
@@ -18,7 +18,7 @@ Dog& Dog::operator=(const Dog& content)
     std::cout << "Dog Copy assignment operator Called!" << std::endl;
     if (this != &content)
     {
-        Animal::operator=(content);
+        AAnimal::operator=(content);
         if(brainy)
             delete brainy;
         brainy = new Brain(*content.brainy);

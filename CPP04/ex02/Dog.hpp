@@ -1,10 +1,10 @@
 #ifndef DOG_HPP
 #define DOG_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Dog : public Animal
+class Dog : public AAnimal
 {
     private:
     Brain   *brainy;
@@ -16,6 +16,7 @@ class Dog : public Animal
     virtual ~Dog();
     
     void makeSound() const;
+    
     std::string getType( void ) const;
     void        setType( std::string const &type );
 };

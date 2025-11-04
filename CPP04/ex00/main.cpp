@@ -6,6 +6,9 @@
 
 int main()
 {
+    system("leaks SubtypePolyyyy");
+    
+    std::cout << "\n-----Dynamic Polymorphism Test Subject-----\n" << std::endl;
     {
         const Animal* meta = new Animal();
         const Animal* j = new Dog();
@@ -19,7 +22,7 @@ int main()
         delete i;
         delete j;
     }
-    std::cout << "\n-------------------------------------\n" << std::endl;
+    std::cout << "\n-----Dynamic Polymorphism Test-----\n" << std::endl;
     {
         Animal *obouftou = new Cat();
         obouftou->makeSound();
@@ -28,14 +31,14 @@ int main()
         obouftou->makeSound();
         delete obouftou;
     }
-    std::cout << "\n-------------------------------------\n" << std::endl;
+    std::cout << "\n-----Stack Object Test-----\n" << std::endl;
     {
         Dog dazai;
         dazai.makeSound();
         Cat ot7man;
         ot7man.makeSound();
     }
-    std::cout << "\n-------------------------------------\n" << std::endl;
+    std::cout << "\n-----WrongAnimal Test-----\n" << std::endl;
     {
         WrongAnimal* a = new WrongCat();
         a->makeSound();
