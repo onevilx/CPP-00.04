@@ -1,9 +1,9 @@
-NAME = Interface
+NAME = Interfaces
 CC = c++
 RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-SOURCES = main.cpp
-INCLUDES =
+SOURCES = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
+INCLUDES = AMateria.hpp Cure.hpp Ice.hpp Character.hpp MateriaSource.hpp ICharacter.hpp IMateriaSource.hpp 
 
 OBJ = $(SOURCES:.cpp=.opp)
 
