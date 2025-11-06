@@ -8,7 +8,6 @@
 
 int main()
 {
-    system("leaks Interfaces");
     std::cout << "\n-----main test from subject-----\n" << std::endl;
     {
         IMateriaSource* src = new MateriaSource();
@@ -47,7 +46,9 @@ int main()
         hero->equip(cure2);
 
         std::cout << "\n--- Trying to equip 5th materia ---" << std::endl;
-        hero->equip(src->createMateria("ice"));
+        AMateria* extra = src->createMateria("ice");
+        hero->equip(extra);
+        delete extra;          
 
         std::cout << "\n--- Using all equipped materias ---" << std::endl;
         hero->use(0, *enemy);
