@@ -7,8 +7,6 @@
 
 int main()
 {
-    system("leaks BrainyyDynamic");
-    
     std::cout << "\n-----Dynamic Polymorphism Test Subject-----\n" << std::endl;
     {
         const Animal* meta = new Animal();

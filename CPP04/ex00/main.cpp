@@ -6,8 +6,6 @@
 
 int main()
 {
-    system("leaks SubtypePolyyyy");
-    
     std::cout << "\n-----Dynamic Polymorphism Test Subject-----\n" << std::endl;
     {
         const Animal* meta = new Animal();

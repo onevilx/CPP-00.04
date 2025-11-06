@@ -7,8 +7,6 @@
 
 int main()
 {
-    system("leaks AbstractClass");
-    
     std::cout << "\n-----Dynamic Polymorphism Test Subject-----\n" << std::endl;
     {
         const AAnimal* j = new Dog();
